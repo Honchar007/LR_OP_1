@@ -10,6 +10,8 @@ namespace LR_OP_1
     {
         static void Main(string[] args)
         {
+           
+            Console.WriteLine("HelloWorld");
         }
     }
 }
