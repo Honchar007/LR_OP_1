@@ -1,0 +1,7 @@
+D:\Labs\LR_OP_1\LR_OP_1\bin\Debug\LR_OP_1.exe.config
+D:\Labs\LR_OP_1\LR_OP_1\bin\Debug\LR_OP_1.exe
+D:\Labs\LR_OP_1\LR_OP_1\bin\Debug\LR_OP_1.pdb
+D:\Labs\LR_OP_1\LR_OP_1\obj\Debug\LR_OP_1.csprojAssemblyReference.cache
+D:\Labs\LR_OP_1\LR_OP_1\obj\Debug\LR_OP_1.csproj.CoreCompileInputs.cache
+D:\Labs\LR_OP_1\LR_OP_1\obj\Debug\LR_OP_1.exe
+D:\Labs\LR_OP_1\LR_OP_1\obj\Debug\LR_OP_1.pdb
