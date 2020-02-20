@@ -6,7 +6,7 @@ namespace LR_OP_1
 {
     class Program
     {
-        static string[,] ReadText()
+        static void ReadText()
         {
             string str = File.ReadAllText("premier_league1.csv");
             int c=0;
@@ -34,38 +34,33 @@ namespace LR_OP_1
                     counter++;
                 }  
             }
-            int[,] ResultOfCurrentTeams = new int[c, int.Parse(wordSplit[0])];
-            int[,] ResultOfOpponentTeams = new int[c, int.Parse(wordSplit[0])];
-
-            for (int i = 0; i < c; i++)
+            DivideOnTwoTables(tabl, c, n);
+        }
+        static void DivideOnTwoTables(string[,] tabl,int teamsN,int matchN)
+        {
+            int[,] ResultOfCurrentTeams = new int[teamsN, matchN];
+            int[,] ResultOfOpponentTeams = new int[teamsN, matchN];
+            string temp;
+            for (int i = 0; i < teamsN; i++)
             {
-                for (int j = 1; j < n; j++)
+                for (int j = 1; j < matchN; j++)
                 {
                     temp = tabl[i, j];
                     if (Char.IsNumber(temp[0]))
                     {
-                        ResultOfCurrentTeams[i, j-1] = temp[0] - '0'; 
-                        ResultOfOpponentTeams[i,j-1] = temp[2] - '0';Console.Write(ResultOfOpponentTeams[i, j-1]+" ");
+                        ResultOfCurrentTeams[i, j - 1] = temp[0] - '0';
+                        ResultOfOpponentTeams[i, j - 1] = temp[2] - '0'; Console.Write(ResultOfOpponentTeams[i, j - 1] + " ");
                     }
                 }
                 Console.WriteLine();
             }
-            for (int i = 0; i < c; i++)
-            {
-                for (int j = 1; j < n; j++)
-                {
-                    temp = tabl[i, j];
-                    if (Char.IsNumber(temp[0]))
-                    {
-                        
-                    }
-                }
-            }
-            return tabl;
         }
+
         static void Main(string[] args)
         {
-            string[,] num = ReadText();
+            ReadText();
+           
+            //DivideOnTwoTables(tabl, tabl.GetLowerBound(0), tabl.Length / tabl.GetLowerBound(0));
             Console.WriteLine("HelloWorld");
             Console.ReadLine();
         }
