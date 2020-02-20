@@ -34,9 +34,35 @@ namespace LR_OP_1
                     counter++;
                 }  
             }
+            int[,] ResultOfCurrentTeams = new int[c, int.Parse(wordSplit[0])];
+            int[,] ResultOfOpponentTeams = new int[c, int.Parse(wordSplit[0])];
+
+            for (int i = 0; i < c; i++)
+            {
+                for (int j = 1; j < n; j++)
+                {
+                    temp = tabl[i, j];
+                    if (Char.IsNumber(temp[0]))
+                    {
+                        ResultOfCurrentTeams[i, j-1] = temp[0] - '0'; 
+                        ResultOfOpponentTeams[i,j-1] = temp[2] - '0';Console.Write(ResultOfOpponentTeams[i, j-1]+" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            for (int i = 0; i < c; i++)
+            {
+                for (int j = 1; j < n; j++)
+                {
+                    temp = tabl[i, j];
+                    if (Char.IsNumber(temp[0]))
+                    {
+                        
+                    }
+                }
+            }
             return tabl;
         }
-
         static void Main(string[] args)
         {
             string[,] num = ReadText();
