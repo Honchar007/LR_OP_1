@@ -66,15 +66,20 @@ namespace LR_OP_1
            int[]Score= Points(teamsN, matchN, ResultOfCurrentTeams, ResultOfOpponentTeams);
            string[] ResTable=new string[teamsN];
             string buf="";
+            for (int i = 0; i < teamsN; i++)
+            {
+                string output;
+                output=String.Format("{0,3} {1,-30}{2:N0}",(1+i),tabl[i, 0], Score[i]);
+                Console.WriteLine(output);
+            }
             for(int i=0; i<teamsN; i++)
             {
-                ResTable[i] =String.Format("{0,3} {1, -30} {2:N0}",(1+i), tabl[i, 0], Score[i]);
+                ResTable[i] =(1+i)+"," +tabl[i, 0]+ "," + Score[i];
                 buf += ResTable[i]+"\n";
-               
             }
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Tournament.csv");
             File.WriteAllText(path, buf);
-            Console.WriteLine(buf);
+           
         }
          static int[] Points(int teamsN, int matchN, int[,] ResultOfCurrentTeams, int[,] ResultOfOpponentTeams)
         {
