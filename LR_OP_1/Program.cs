@@ -56,30 +56,35 @@ namespace LR_OP_1
                     temp = tabl[i, j];
                     if (Char.IsNumber(temp[0]))
                     {
-                        ResultOfCurrentTeams[i, j-1] = temp[0] - '0'; Console.Write(ResultOfCurrentTeams[i, j-1] + "-");
-                        ResultOfOpponentTeams[i, j-1] = temp[2] - '0'; Console.Write(ResultOfOpponentTeams[i, j-1] + " ");
+                        ResultOfCurrentTeams[i, j - 1] = temp[0] - '0'; Console.Write(ResultOfCurrentTeams[i, j - 1] + "-");
+                        ResultOfOpponentTeams[i, j - 1] = temp[2] - '0'; Console.Write(ResultOfOpponentTeams[i, j - 1] + " ");
                     }
                 }
                 Console.WriteLine();
+              
             }
+           int[]Score= Points(teamsN, matchN, ResultOfCurrentTeams, ResultOfOpponentTeams);
 
+
+        }
+         static int[] Points(int teamsN, int matchN, int[,] ResultOfCurrentTeams, int[,] ResultOfOpponentTeams)
+        {
             int[] PointList = new int[teamsN];
             for (int i = 0; i < teamsN; i++)
             {
                 for (int j = 1; j < matchN; j++)
                 {
-                    if (ResultOfCurrentTeams[i, j-1] > ResultOfOpponentTeams[i, j-1])
-                        PointList[i] += 3;     
-                    if (ResultOfCurrentTeams[i, j-1] == ResultOfOpponentTeams[i, j-1])
+                    if (ResultOfCurrentTeams[i, j - 1] > ResultOfOpponentTeams[i, j - 1])
+                        PointList[i] += 3;
+                    if (ResultOfCurrentTeams[i, j - 1] == ResultOfOpponentTeams[i, j - 1])
                         PointList[i] += 1;
-                   
+
                 }
                 Console.WriteLine(PointList[i]);
                 Console.WriteLine();
             }
 
-
-           
+            return PointList;
         }
-    }
-}
+    } }
+
