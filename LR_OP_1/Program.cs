@@ -10,7 +10,6 @@ namespace LR_OP_1
         {
             ReadText();
 
-            //DivideOnTwoTables(tabl, tabl.GetLowerBound(0), tabl.Length / tabl.GetLowerBound(0));
             Console.WriteLine("HelloWorld");
             Console.ReadLine();
         }
@@ -64,7 +63,13 @@ namespace LR_OP_1
               
             }
            int[]Score= Points(teamsN, matchN, ResultOfCurrentTeams, ResultOfOpponentTeams);
+           string[] ResTable=new string[teamsN];
+            for(int i=0; i<teamsN; i++)
+            {
+                ResTable[i] = String.Format("{0, -20} {1:N1}", tabl[i, 0], Score[i]);
+                Console.WriteLine(ResTable[i]);
 
+            }
 
         }
          static int[] Points(int teamsN, int matchN, int[,] ResultOfCurrentTeams, int[,] ResultOfOpponentTeams)
