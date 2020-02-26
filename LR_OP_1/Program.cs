@@ -7,10 +7,11 @@ namespace LR_OP_1
     class Program
     {
         static void Main(string[] args)
-        {
+        
+ {
             ReadText();
 
-            Console.WriteLine("HelloWorld");
+         
             Console.ReadLine();
         }
         static void ReadText()
@@ -41,9 +42,9 @@ namespace LR_OP_1
                     counter++;
                 }
             }
-            DivideOnTwoTables(tabl, c, n);
+            CreateFile(tabl, c, n);
         }
-        static void DivideOnTwoTables(string[,] tabl, int teamsN, int matchN)
+        static void CreateFile(string[,] tabl, int teamsN, int matchN)
         {
             int[,] ResultOfCurrentTeams = new int[teamsN, matchN];
             int[,] ResultOfOpponentTeams = new int[teamsN, matchN];
@@ -55,11 +56,11 @@ namespace LR_OP_1
                     temp = tabl[i, j];
                     if (Char.IsNumber(temp[0]))
                     {
-                        ResultOfCurrentTeams[i, j - 1] = temp[0] - '0'; Console.Write(ResultOfCurrentTeams[i, j - 1] + "-");
-                        ResultOfOpponentTeams[i, j - 1] = temp[2] - '0'; Console.Write(ResultOfOpponentTeams[i, j - 1] + " ");
+                        ResultOfCurrentTeams[i, j - 1] = temp[0] - '0'; //Console.Write(ResultOfCurrentTeams[i, j - 1] + "-");
+                        ResultOfOpponentTeams[i, j - 1] = temp[2] - '0'; //Console.Write(ResultOfOpponentTeams[i, j - 1] + " ");
                     }
                 }
-                Console.WriteLine();
+               // Console.WriteLine();
               
             }
            int[]Score= Points(teamsN, matchN, ResultOfCurrentTeams, ResultOfOpponentTeams);
@@ -73,7 +74,7 @@ namespace LR_OP_1
             }
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Tournament.csv");
             File.WriteAllText(path, buf);
-
+            Console.WriteLine(buf);
         }
          static int[] Points(int teamsN, int matchN, int[,] ResultOfCurrentTeams, int[,] ResultOfOpponentTeams)
         {
@@ -88,8 +89,7 @@ namespace LR_OP_1
                         PointList[i] += 1;
 
                 }
-                Console.WriteLine(PointList[i]);
-                Console.WriteLine();
+               
             }
 
             return PointList;
